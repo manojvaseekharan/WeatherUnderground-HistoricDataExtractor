@@ -83,6 +83,7 @@ public class Helpers {
 			String result = "";
 			 while ((inputLine = in.readLine()) != null)
 			 {
+				 
 				 try {
 					inputLine = inputLine.substring(0,inputLine.length()-6);
 				} catch (StringIndexOutOfBoundsException e) {
@@ -230,6 +231,7 @@ public class Helpers {
 		
 		return null;
 	}
+	
 	
 	public static void writeToFile(String latitude, String longitude, String commaDelimitedFile)
 	{
