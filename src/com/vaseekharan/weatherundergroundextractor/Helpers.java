@@ -11,7 +11,7 @@ import java.nio.channels.ReadableByteChannel;
 
 public class Helpers {
 	
-	public static String obtainPostcodeFromLatLong(double latitude, double longitude)
+	public synchronized static String obtainPostcodeFromLatLong(double latitude, double longitude)
 	{
 		String stringURL = "http://uk-postcodes.com/latlng/"+latitude+","+longitude+".csv";
 		try {
@@ -29,14 +29,14 @@ public class Helpers {
 		
 	}
 	
-	private static String filterOutPostcode(String input)
+	private synchronized static String filterOutPostcode(String input)
 	{
 		String result = input.substring(0,input.indexOf(','));
 		System.out.println(result);
 		return result;
 	}
 
-	public static String getHistoricDataURL(String postcode)
+	public synchronized static String getHistoricDataURL(String postcode)
 	{
 		int counter = 0;
 		postcode = postcode.replaceAll(" ", "+");
@@ -75,7 +75,7 @@ public class Helpers {
 		
 	}
 
-	public static String getCommaDelimitedFile(String url)
+	public synchronized static String getCommaDelimitedFile(String url)
 	{
 		try {
 			BufferedReader in = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
@@ -99,7 +99,7 @@ public class Helpers {
 		return null;
 	}
 
-	public static String getNextDate(String currentDate)
+	public synchronized static String getNextDate(String currentDate)
 	{
 		Integer year = Integer.parseInt(currentDate.substring(0,4));
 		Integer month = Integer.parseInt(currentDate.substring(5,7));
@@ -233,7 +233,7 @@ public class Helpers {
 	}
 	
 	
-	public static void writeToFile(String latitude, String longitude, String commaDelimitedFile)
+	public synchronized static void writeToFile(String latitude, String longitude, String commaDelimitedFile)
 	{
 		try {
 			FileWriter fw = new FileWriter("./"+latitude + " " + longitude +".csv",true);
