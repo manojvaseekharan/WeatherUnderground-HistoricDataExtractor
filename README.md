@@ -9,7 +9,7 @@ Command Line Arguments
 ---
 Compile using the command: *javac Main.java*. Then pass the stations.xml file, the start index, and the end index.
 
-'''java Main stations.xml 0 20''' - this will present you with the weather data for the first 19 bikes in the stations.xml file. 
+```java Main stations.xml 0 20``` - this will present you with the weather data for the first 19 bikes in the stations.xml file. 
 
 For reference, there are 746 bike racks.
 
