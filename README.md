@@ -7,9 +7,9 @@ Typically you would use Weather Underground's API to access their data, but this
 
 Command Line Arguments
 ---
-Compile using the command: *javac Main.java*. Then pass the stations.xml file as an argument.
+Compile using the command: *javac Main.java*. Then pass the stations.xml file, the start index, and the end index.
 
-*java Main stations.xml*
+'''java Main stations.xml 0 20''' - this will present you with the weather data for the first 19 bikes in the stations.xml file. 
 
-And blam! After many hours, you should have a CSV file for all 700+ bike racks with detailed weather data. Enjoy!
+For reference, there are 746 bike racks.
 
